@@ -29,9 +29,13 @@ public:
     bool setData(const QModelIndex & index, const QVariant & value,
         int role = Qt::EditRole) override;
 
+    // MyDelegate interactions
+    QWidget* CreateEditor(QWidget *parent, const QModelIndex &index) const;
+    void SetEditorData(QWidget *editor, const QModelIndex &index) const;
+    void SetDataFromEditor(QWidget * editor, const QModelIndex & index);
+
 private:
     bool IndexIsValid(const QModelIndex & index) const;
-
     // Will be stored with rowsInfo[row] being responsible for the displayed at the given row.
     std::vector<std::unique_ptr<DataRow>> rowsInfo;
 };

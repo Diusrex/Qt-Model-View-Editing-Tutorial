@@ -15,6 +15,12 @@ public:
     virtual void DataChanged(const int & column, const QVariant & value) = 0;
 
     virtual bool CanBeChanged(const int & column) const = 0;
+
+    virtual QWidget* CreateEditor(QWidget *parent, const int & column) const = 0;
+
+    virtual void SetEditorData(QWidget *editor, const int & column) const = 0;
+
+    virtual void SetDataFromEditor(QWidget * editor, int column) = 0;
 };
 
 #endif // DATAROW_H

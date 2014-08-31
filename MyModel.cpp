@@ -77,3 +77,23 @@ bool MyModel::IndexIsValid(const QModelIndex & index) const
 {
     return index.isValid() && index.row() < rowCount();
 }
+
+QWidget* MyModel::CreateEditor(QWidget *parent, const QModelIndex &index) const
+{
+    if (IndexIsValid(index))
+        return rowsInfo[index.row()]->CreateEditor(parent, index.column());
+
+    return nullptr;
+}
+
+void MyModel::SetEditorData(QWidget *editor, const QModelIndex &index) const
+{
+    if (IndexIsValid(index))
+        rowsInfo[index.row()]->SetEditorData(editor, index.column());
+}
+
+void MyModel::SetDataFromEditor(QWidget * editor, const QModelIndex & index)
+{
+    if (IndexIsValid(index))
+        rowsInfo[index.row()]->SetDataFromEditor(editor, index.column());
+}
