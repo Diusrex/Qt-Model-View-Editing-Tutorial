@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
     // table.horizontalHeader()->setStretchLastSection(true);
 
     std::vector<std::unique_ptr<DataRow>> numbers;
-    numbers.push_back(std::unique_ptr<DataRow>(new NameNumberInfo("Hi", 0)));
-    numbers.push_back(std::unique_ptr<DataRow>(new NameNumberInfo("There", 1)));
+    numbers.push_back(std::unique_ptr<DataRow>(new NameNumberInfo("Row 1", 0, -1, 20)));
+    numbers.push_back(std::unique_ptr<DataRow>(new NameNumberInfo("Row 2", 1, 1, 5)));
 
     MyModel model = MyModel(numbers);
     table.setModel(&model);

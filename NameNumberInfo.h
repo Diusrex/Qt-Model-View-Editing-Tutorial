@@ -9,10 +9,12 @@
 class NameNumberInfo : public DataRow
 {
 public:
-    NameNumberInfo(const QString & name, const int & number)
+    NameNumberInfo(const QString & name, const int & number, const int & minimum, const int & maximum)
         : name(name),
-        number(number)
-    {}
+        number(number),
+        minimum(minimum),
+        maximum(maximum)
+        {}
 
     QVariant GetData(int column) const override;
 
@@ -22,9 +24,17 @@ public:
 
     bool CanBeChanged(const int & column) const override;
 
+    QWidget* CreateEditor(QWidget *parent, const int & column) const override;
+
+    void SetEditorData(QWidget *editor, const int & column) const override;
+
+    void SetDataFromEditor(QWidget * editor, int column) override;
+
 private:
-    const QString name;
+    QString name;
     int number;
+
+    const int maximum, minimum;
 
     static const int NAME_COLUMN = 0, NUMBER_COLUMN = 1;
 
