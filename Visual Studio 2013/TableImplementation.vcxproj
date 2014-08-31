@@ -79,11 +79,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\DataRow.h" />
+    <ClInclude Include="..\MyDelegate.h" />
     <ClInclude Include="..\MyModel.h" />
     <ClInclude Include="..\NameNumberInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\MyDelegate.cpp" />
     <ClCompile Include="..\MyModel.cpp" />
     <ClCompile Include="..\NameNumberInfo.cpp" />
   </ItemGroup>

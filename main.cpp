@@ -1,3 +1,4 @@
+#include "MyDelegate.h"
 #include "MyModel.h"
 #include "NameNumberInfo.h"
 
@@ -24,6 +25,9 @@ int main(int argc, char *argv[])
 
     MyModel model = MyModel(numbers);
     table.setModel(&model);
+
+    MyDelegate delegate = MyDelegate(&table);
+    table.setItemDelegate(&delegate);
 
     table.show();
 
