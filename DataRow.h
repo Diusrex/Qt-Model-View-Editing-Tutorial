@@ -16,8 +16,6 @@ public:
 
     virtual bool CanBeChanged(const int & column) const = 0;
 
-    virtual QWidget* CreateEditor(QWidget *parent, const int & column) const = 0;
-
     virtual void SetEditorData(QWidget *editor, const int & column) const = 0;
 
     virtual void SetDataFromEditor(QWidget * editor, int column) = 0;

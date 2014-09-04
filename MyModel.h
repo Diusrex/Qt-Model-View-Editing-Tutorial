@@ -29,8 +29,6 @@ public:
     bool setData(const QModelIndex & index, const QVariant & value,
         int role = Qt::EditRole) override;
 
-    // MyDelegate interactions
-    QWidget* CreateEditor(QWidget *parent, const QModelIndex &index) const;
     void SetEditorData(QWidget *editor, const QModelIndex &index) const;
     void SetDataFromEditor(QWidget * editor, const QModelIndex & index);
 

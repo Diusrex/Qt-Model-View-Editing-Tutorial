@@ -24,8 +24,6 @@ public:
 
     bool CanBeChanged(const int & column) const override;
 
-    QWidget* CreateEditor(QWidget *parent, const int & column) const override;
-
     void SetEditorData(QWidget *editor, const int & column) const override;
 
     void SetDataFromEditor(QWidget * editor, int column) override;

@@ -41,21 +41,6 @@ bool NameNumberInfo::CanBeChanged(const int & column) const
     return (column == NAME_COLUMN || column == NUMBER_COLUMN);
 }
 
-QWidget* NameNumberInfo::CreateEditor(QWidget *parent, const int & column) const
-{
-    switch (column)
-    {
-    case NAME_COLUMN:
-        return new QLineEdit(parent);
-
-    case NUMBER_COLUMN:
-        return new QSpinBox(parent);
-
-    default:
-        return nullptr;
-    }
-}
-
 void NameNumberInfo::SetEditorData(QWidget *editor, const int & column) const
 {
     switch (column)
