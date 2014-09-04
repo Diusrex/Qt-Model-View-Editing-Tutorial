@@ -1,6 +1,6 @@
 #include "NameNumberInfo.h"
 
-#include <QLineEdit>
+#include <QTextEdit>
 #include <QSpinBox>
 
 QVariant NameNumberInfo::GetData(int column) const
@@ -47,7 +47,7 @@ void NameNumberInfo::SetEditorData(QWidget *editor, const int & column) const
     {
     case NAME_COLUMN:
     {
-        QLineEdit * lineEdit = static_cast<QLineEdit *>(editor);
+        QTextEdit * lineEdit = static_cast<QTextEdit *>(editor);
         lineEdit->setText(name);
         break;
     }
@@ -73,8 +73,8 @@ void NameNumberInfo::SetDataFromEditor(QWidget * editor, int column)
     {
     case NAME_COLUMN:
     {
-        QLineEdit * lineEdit = static_cast<QLineEdit *>(editor);
-        DataChanged(column, lineEdit->text());
+        QTextEdit * lineEdit = static_cast<QTextEdit *>(editor);
+        DataChanged(column, lineEdit->toPlainText());
         break;
     }
 

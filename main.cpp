@@ -48,7 +48,7 @@ void ChangeQItemEditorFactory()
 {
     QItemEditorFactory * factory = new QItemEditorFactory;
 
-    QItemEditorCreatorBase * stringEditor = new QStandardItemEditorCreator<QLineEdit>();
+    QItemEditorCreatorBase * stringEditor = new QStandardItemEditorCreator<QTextEdit>();
     factory->registerEditor(QVariant::String, stringEditor);
 
     QItemEditorCreatorBase * intEditor = new QStandardItemEditorCreator<QSpinBox>();
