@@ -2,9 +2,16 @@
 #include "MyModel.h"
 #include "NameNumberInfo.h"
 
-#include <QTableView>
+#include <QItemEditorFactory>
 #include <QHeaderView>
+#include <QLineEdit>
+#include <QSpinBox>
+#include <QStandardItemEditorCreator>
 #include <QtWidgets/QApplication>
+#include <QTableView>
+#include <QTextEdit>
+
+void ChangeQItemEditorFactory();
 
 int main(int argc, char *argv[])
 {
@@ -29,7 +36,23 @@ int main(int argc, char *argv[])
     MyDelegate delegate = MyDelegate(&table);
     table.setItemDelegate(&delegate);
 
+    ChangeQItemEditorFactory();
+
     table.show();
 
     return a.exec();
+}
+
+
+void ChangeQItemEditorFactory()
+{
+    QItemEditorFactory * factory = new QItemEditorFactory;
+
+    QItemEditorCreatorBase * stringEditor = new QStandardItemEditorCreator<QLineEdit>();
+    factory->registerEditor(QVariant::String, stringEditor);
+
+    QItemEditorCreatorBase * intEditor = new QStandardItemEditorCreator<QSpinBox>();
+    factory->registerEditor(QVariant::Int, intEditor);
+
+    QItemEditorFactory::setDefaultFactory(factory);
 }
