@@ -9,7 +9,6 @@
 #include <QStandardItemEditorCreator>
 #include <QtWidgets/QApplication>
 #include <QTableView>
-#include <QTextEdit>
 
 void ChangeQItemEditorFactory();
 
@@ -48,7 +47,7 @@ void ChangeQItemEditorFactory()
 {
     QItemEditorFactory * factory = new QItemEditorFactory;
 
-    QItemEditorCreatorBase * stringEditor = new QStandardItemEditorCreator<QTextEdit>();
+    QItemEditorCreatorBase * stringEditor = new QStandardItemEditorCreator<QLineEdit>();
     factory->registerEditor(QVariant::String, stringEditor);
 
     QItemEditorCreatorBase * intEditor = new QStandardItemEditorCreator<QSpinBox>();
