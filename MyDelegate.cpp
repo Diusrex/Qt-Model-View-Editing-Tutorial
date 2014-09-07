@@ -32,8 +32,3 @@ void MyDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const 
 
     myModel->SetDataFromEditor(editor, index);
 }
-
-void MyDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex & /* index */) const
-{
-    editor->setGeometry(option.rect);
-}
