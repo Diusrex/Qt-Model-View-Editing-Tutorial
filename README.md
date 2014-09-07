@@ -1,9 +1,11 @@
-Qt TableModel Implementation
+Qt Model/View Editing Tutorial
 ============================
 
-This repository is for my tutorial on how Model/View programming. It shows how to create a TableModel that is based around organizing data in rows.
+This repository is for my tutorial on how to improve the editing functionality when using a view and model.
 
-The code currently only allows the default editing provited by QTableView. Will create a branch, or different repository, with editing later.
+It is built upon the code for my [Qt TableModel Implementation](https://github.com/Diusrex/qt-tablemodel-implementation), but contains additional editing customization throught the use of a delegate and altering QItemEditorFactory.
+
+
 
 Requirements to Run
 ============================
