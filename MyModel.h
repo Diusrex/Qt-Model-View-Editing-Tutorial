@@ -7,8 +7,6 @@
 #include <QAbstractTableModel>
 #include <vector>
 
-class QSpinBox;
-
 class MyModel : public QAbstractTableModel
 {
 public:

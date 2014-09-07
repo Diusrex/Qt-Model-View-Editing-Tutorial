@@ -7,7 +7,7 @@
 class MyDelegate : public QStyledItemDelegate
 {
 public:
-    MyDelegate(QObject *parent = 0);
+    explicit MyDelegate(QObject *parent = 0);
 
     void setEditorData(QWidget *editor, const QModelIndex &index) const override;
 
