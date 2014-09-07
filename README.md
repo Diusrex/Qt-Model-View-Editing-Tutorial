@@ -3,9 +3,11 @@ Qt Model/View Editing Tutorial
 
 This repository is for my tutorial on how to improve the editing functionality when using a view and model.
 
-It is built upon the code for my [Qt TableModel Implementation](https://github.com/Diusrex/qt-tablemodel-implementation), but contains additional editing customization throught the use of a delegate and altering QItemEditorFactory.
+It is built upon the code for my [Qt TableModel Implementation](https://github.com/Diusrex/qt-tablemodel-implementation).
 
+This branch (DelegateImplementation) contains editing customizations throught the use of a delegate and QItemEditorFactory.
 
+The other branch (DelegateCreatesEditor) contains editing customization through solely the use of a delegate.
 
 Requirements to Run
 ============================
